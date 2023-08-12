@@ -33,10 +33,11 @@ def index(request):
 
 class BookListView(generic.ListView):
     model = Book
-    context_object_name = 'my_book_list'
+    template_name = 'catalog/templates/book_list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['title'] = 'Books'
         context['some_data'] = 'This is just some data'
         return context
 
