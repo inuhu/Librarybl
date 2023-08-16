@@ -39,28 +39,28 @@ class BookListView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Books'
-        context['some_data'] = 'This is just some data'
         return context
 
 
 
 class BookDetailView(generic.DetailView):
     model = Book
+    template_name = 'catalog/book_detail.html'
 
 
 class AuthorListView(generic.ListView):
     model = Author
-    template_name = 'catalog/templates/author_list.html'
+    template_name = 'catalog/author_list.html'
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Authors'
-        context['some_data'] = 'This is just some data'
         return context
 
 
 class AuthorDetailView(generic.DetailView):
     model = Author
-# and next
+    template_name = 'catalog/author_detail.html'
+    context_object_name = 'author'
 

@@ -11,7 +11,7 @@
 
       {% for author in object_list %}
       <li>
-          <a href="{{ book.get_absolute_url }}">{{ author.first_name }}</a>
+          <a href="{{ author.get_absolute_url }}">{{ author.first_name  }} {{ author.last_name }}</a>
       </li>
       {% endfor %}
 
